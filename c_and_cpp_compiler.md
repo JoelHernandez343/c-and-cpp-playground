@@ -20,17 +20,17 @@ Option | Description
 `gcc -Wextra` | Enable extra warning messages.
 ---
 ## Options' description
-## `gcc -c`
+### `gcc -c`
 Compiles source files to object files.
-### Syntax
+#### Syntax
 ```shell
 gcc -c [options] [source files]
 ```
-### Example
+#### Example
 ```shell
 gcc -c file.c
 ```
-### Output
+#### Output
 Generate a `file.o` file.
 
 ## `gcc -g(level)`
@@ -38,9 +38,9 @@ Define a preprocessor macro.
 
 
 
-### Output flag `-o`:
-Write th build output to and output file.
+### `gcc -o output file`
+Write the build output to and output file.
 #### Syntax
 ```shell
-gcc [options] [source files] [object files] -o 
+gcc [options] [source files] [object files] -o output
 ```
