@@ -33,7 +33,7 @@ gcc -c file.c
 #### Output
 Generate a `file.o` file.
 
-## `gcc -g(level)`
+### `gcc -g(level)`
 Define a preprocessor macro.
 
 
