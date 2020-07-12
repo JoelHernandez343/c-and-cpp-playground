@@ -13,7 +13,7 @@ Option | Description
 [`gcc -g(level)`](#gcc--glevel) | Generate debug information to be used by GDB.
 [`gcc -I(dir)`](#gcc--Idir) | Add include directory of header files.
 [`gcc -l(lib)`](#gcc--llib) | Link with a library file.
-[`gcc -o output file`](#gcc--o-output-file) | Write build output to output file.
+[`gcc -o output file`](#Output-flag-gcc--o-output-file) | Write build output to output file.
 [`gcc -O(level)`](#gcc--O) | Optimize for code size and execution time.
 `gcc -w` | Disabled all warning messages.
 [`gcc -Wall`](#gcc--Wall) | Enabled all warning messages.
@@ -38,7 +38,7 @@ Define a preprocessor macro.
 
 
 
-### `gcc -o output file`
+### Output flag: `gcc -o output file`
 Write the build output to and output file.
 #### Syntax
 ```shell
