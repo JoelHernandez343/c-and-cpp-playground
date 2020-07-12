@@ -10,9 +10,9 @@ $ gcc [options] [source files] [object files] [-o output file]
 Option | Description
 -|-
 [`gcc -c`](#gcc--c) | Compiles source files to object files.
-[`gcc -g(level)`](#gcc--g(level)) | Generate debug information to be used by GDB.
-[`gcc -I(dir)`](#gcc--I(dir)) | Add include directory of header files.
-[`gcc -l(lib)`](#gcc--l(lib)) | Link with a library file.
+[`gcc -g(level)`](#gcc--glevel) | Generate debug information to be used by GDB.
+[`gcc -I(dir)`](#gcc--Idir) | Add include directory of header files.
+[`gcc -l(lib)`](#gcc--llib) | Link with a library file.
 [`gcc -o output file`](#gcc--o-output-file) | Write build output to output file.
 [`gcc -O(level)`](#gcc--O) | Optimize for code size and execution time.
 `gcc -w` | Disabled all warning messages.
