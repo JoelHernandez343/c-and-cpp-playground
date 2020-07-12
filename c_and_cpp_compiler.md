@@ -24,16 +24,15 @@ Option | Description
 Compiles source files to object files.
 ### Syntax
 ```shell
-$ gcc -c [options] [source files]
+gcc -c [options] [source files]
 ```
 ### Example
 ```shell
-$ gcc -c file.c
+gcc -c file.c
 ```
 ### Output
 Generate a `file.o` file.
 
----
 ## `gcc -g(level)`
 Define a preprocessor macro.
 
@@ -43,5 +42,5 @@ Define a preprocessor macro.
 Write th build output to and output file.
 #### Syntax
 ```shell
-$ gcc [options] [source files] [object files] -o 
+gcc [options] [source files] [object files] -o 
 ```
