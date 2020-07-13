@@ -13,8 +13,8 @@ Option | Description
 [`gcc -g(level)`](#generate-debug-information-gcc--glevel) | Generate debug information to be used by GDB.
 [`gcc -I(dir)`](#include-directory-of-header-files-gcc--Idir) | Add include directory of header files.
 [`gcc -l(lib)`](#link-with-library-gcc--llib) | Link with a library file.
-[`gcc -o output file`](#Output-flag-gcc--o-output-file) | Write build output to output file.
-[`gcc -O(level)`](#gcc--O) | Optimize for code size and execution time.
+[`gcc -o output file`](#output-flag-gcc--o-output-file) | Write build output to output file.
+[`gcc -O(level)`](#set-compilers-optimization-gcc--O) | Optimize for code size and execution time.
 `gcc -w` | Disabled all warning messages.
 [`gcc -Wall`](#gcc--Wall) | Enabled all warning messages.
 `gcc -Wextra` | Enable extra warning messages.
@@ -142,3 +142,20 @@ Write the build output to and output file.
 ```shell
 gcc [options] [source files] [object files] -o output
 ```
+
+## Set compiler's optimization: `gcc -O`
+Set the compiler's optimization level. (Average performance *)
+Option | Optimization level | Execution time | Code size | Memory usage | Compile time
+-|-|-|-|-|-
+`-O0` | Optimization for compilation time (default) | + | + | - | -
+`-O1` or `-O` | Optimization for code size and execution time | - | - | + | +
+`-O2` | Optimization more for code size and execution time | -- || + | ++
+`-O3` | Optimization more for code size and execution time :fire: || -- || +++
+`-Os` | Optimization for code size || -- || ++
+`-Ofast` | O3 with fast none accurate math calculations | --- || + || +++
+
+> +increase, ++increase more, +++increase even more
+
+> -reduce, --reduce more, ---reduce even more
+
+Strange behavior [here](https://stackoverflow.com/questions/28875325/gcc-optimization-flag-o3-makes-code-slower-than-o2) :exclamation:.
