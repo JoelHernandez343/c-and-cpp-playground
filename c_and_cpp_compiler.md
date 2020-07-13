@@ -3,7 +3,7 @@ Based on [rapidtables.com](https://www.rapidtables.com/code/linux/gcc.html)
 ## GCC compiler
 GCC is a short of GNU Compiler Collection, a C compiler for Linux.
 ```shell
-gcc [options] [source files] [object files] [-o output file]
+gcc [options] [source files] [object files] [-o outfile]
 ```
 
 ## GCC options
@@ -11,8 +11,8 @@ Option | Description
 -|-
 [`gcc -c`](#compile-source-gcc--c) | Compiles source files to object files.
 [`gcc -g(level)`](#generate-debug-information-gcc--glevel) | Generate debug information to be used by GDB.
-[`gcc -I(dir)`](#include-directory-of-header-files-gcc--l-option-flag) | Add include directory of header files.
-[`gcc -l(lib)`](#gcc--llib) | Link with a library file.
+[`gcc -I(dir)`](#include-directory-of-header-files-gcc--Idir) | Add include directory of header files.
+[`gcc -l(lib)`](#link-with-library-gcc--llib) | Link with a library file.
 [`gcc -o output file`](#Output-flag-gcc--o-output-file) | Write build output to output file.
 [`gcc -O(level)`](#gcc--O) | Optimize for code size and execution time.
 `gcc -w` | Disabled all warning messages.
@@ -49,7 +49,7 @@ Option | Description
 
 #### Syntax
 ```shell
-gcc -g(level) [options] [source files] [object files] [-o output file]
+gcc -g(level) [options] [source files] [object files] [-o outfile]
 ```
 #### Example
 ```cpp
@@ -77,11 +77,11 @@ Hello world!
 More information about debug levels int the [official documentation](https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html).
 
 
-## Include directory of header files: `gcc -l option flag`
+## Include directory of header files: `gcc -I(dir)`
 Adds include directory of header files.
 #### Syntax
 ```shell
-gcc -Idir [options] [source files] [object files] [-o output file]
+gcc -Idir [options] [source files] [object files] [-o outfile]
 ```
 #### Example
 `header/main.h`
@@ -116,6 +116,24 @@ g++ -Iheader main.cpp -o main
 ./main                           
 Hello world!
 ```
+
+## Link with library: `gcc -l(lib)`
+Links with a library file.
+> `gcc -L(dir)`: Adds custom library directory
+#### Syntax
+```shell
+gcc [options] [source files] [object files] -l(libname) [-o outfile]
+```
+#### Example
+Linking static library file `libmath.a`:
+```shell
+gcc -static file.c -lmath -o file
+```
+Linking shared library file `libmath.so`:
+```shell
+gcc file.c -lmath -o file
+```
+> Note: static library is included in the final binary, shared library is loaded in run-time (external dependency), [more information here](https://stackoverflow.com/questions/2649334/difference-between-static-and-shared-libraries).
 
 
 ## Output flag: `gcc -o output file`
