@@ -11,7 +11,7 @@ Option | Description
 -|-
 [`gcc -c`](#compile-source-gcc--c) | Compiles source files to object files.
 [`gcc -g(level)`](#generate-debug-information-gcc--glevel) | Generate debug information to be used by GDB.
-[`gcc -I(dir)`](#gcc--Idir) | Add include directory of header files.
+[`gcc -I(dir)`](#include-directory-of-header-files-gcc--l-option-flag) | Add include directory of header files.
 [`gcc -l(lib)`](#gcc--llib) | Link with a library file.
 [`gcc -o output file`](#Output-flag-gcc--o-output-file) | Write build output to output file.
 [`gcc -O(level)`](#gcc--O) | Optimize for code size and execution time.
@@ -75,6 +75,48 @@ Hello world!
 (gdb) quit
 ```
 More information about debug levels int the [official documentation](https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html).
+
+
+## Include directory of header files: `gcc -l option flag`
+Adds include directory of header files.
+#### Syntax
+```shell
+gcc -Idir [options] [source files] [object files] [-o output file]
+```
+#### Example
+`header/main.h`
+```cpp
+auto greetings() { std::cout << "Hello world!"; }
+```
+
+`main.cpp`
+```cpp
+#include <iostream>
+#include "main.h"
+
+auto main(void) -> int {
+    greetings();
+
+    return 0;
+}
+```
+
+Building `main.cpp` without include `header/`:
+```shell
+g++ main.cpp -o main
+main.cpp:2:10: fatal error: main.h: No such file or directory
+    2 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+```
+
+Building `main.cpp` with `header/`:
+```shell
+g++ -Iheader main.cpp -o main
+./main                           
+Hello world!
+```
+
 
 ## Output flag: `gcc -o output file`
 Write the build output to and output file.
