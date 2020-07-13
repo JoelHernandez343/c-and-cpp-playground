@@ -1,1 +1,0 @@
-auto greetings() { std::cout << "Hello world!"; }
