@@ -152,7 +152,7 @@ Option | Optimization level | Execution time | Code size | Memory usage | Compil
 `-O2` | Optimization more for code size and execution time | -- || + | ++
 `-O3` | Optimization more for code size and execution time :fire: || -- || +++
 `-Os` | Optimization for code size || -- || ++
-`-Ofast` | O3 with fast none accurate math calculations | --- || + || +++
+`-Ofast` | O3 with fast none accurate math calculations | --- || + | +++
 
 > +increase, ++increase more, +++increase even more
 
