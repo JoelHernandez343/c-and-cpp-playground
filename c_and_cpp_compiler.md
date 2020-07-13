@@ -3,7 +3,7 @@ Based on [rapidtables.com](https://www.rapidtables.com/code/linux/gcc.html)
 ## GCC compiler
 GCC is a short of GNU Compiler Collection, a C compiler for Linux.
 ```shell
-$ gcc [options] [source files] [object files] [-o output file]
+gcc [options] [source files] [object files] [-o output file]
 ```
 
 ## GCC options
@@ -19,8 +19,7 @@ Option | Description
 [`gcc -Wall`](#gcc--Wall) | Enabled all warning messages.
 `gcc -Wextra` | Enable extra warning messages.
 ---
-## Options' description
-### `gcc -c`
+## `gcc -c`
 Compiles source files to object files.
 #### Syntax
 ```shell
@@ -33,12 +32,12 @@ gcc -c file.c
 #### Output
 Generate a `file.o` file.
 
-### `gcc -g(level)`
+## `gcc -g(level)`
 Define a preprocessor macro.
 
 
 
-### Output flag: `gcc -o output file`
+## Output flag: `gcc -o output file`
 Write the build output to and output file.
 #### Syntax
 ```shell
