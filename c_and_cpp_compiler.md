@@ -9,8 +9,8 @@ gcc [options] [source files] [object files] [-o output file]
 ## GCC options
 Option | Description
 -|-
-[`gcc -c`](#gcc--c) | Compiles source files to object files.
-[`gcc -g(level)`](#gcc--glevel) | Generate debug information to be used by GDB.
+[`gcc -c`](#compile-source-gcc--c) | Compiles source files to object files.
+[`gcc -g(level)`](#generate-debug-information-gcc--glevel) | Generate debug information to be used by GDB.
 [`gcc -I(dir)`](#gcc--Idir) | Add include directory of header files.
 [`gcc -l(lib)`](#gcc--llib) | Link with a library file.
 [`gcc -o output file`](#Output-flag-gcc--o-output-file) | Write build output to output file.
@@ -19,7 +19,7 @@ Option | Description
 [`gcc -Wall`](#gcc--Wall) | Enabled all warning messages.
 `gcc -Wextra` | Enable extra warning messages.
 ---
-## `gcc -c`
+## Compile source: `gcc -c`
 Compiles source files to object files.
 #### Syntax
 ```shell
@@ -32,7 +32,7 @@ gcc -c file.c
 #### Output
 Generate a `file.o` file.
 
-## `gcc -g(level)`
+## Generate debug information: `gcc -g(level)`
 Define a preprocessor macro.
 
 
