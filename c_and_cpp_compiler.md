@@ -74,6 +74,7 @@ Hello world!
 [Inferior 1 (process 15094) exited normally]
 (gdb) quit
 ```
+More information about debug levels int the [official documentation](https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html).
 
 ## Output flag: `gcc -o output file`
 Write the build output to and output file.
