@@ -18,7 +18,9 @@ Option | Description
 `gcc -w` | Disabled all warning messages.
 [`gcc -Wall`](#gcc--Wall) | Enabled all warning messages.
 `gcc -Wextra` | Enable extra warning messages.
+
 ---
+
 ## Compile source: `gcc -c`
 Compiles source files to object files.
 #### Syntax
@@ -32,10 +34,46 @@ gcc -c file.c
 #### Output
 Generate a `file.o` file.
 
+
 ## Generate debug information: `gcc -g(level)`
-Define a preprocessor macro.
+Generates debug information to be used by GDB debugger.
 
+Option | Description
+-|-
+`-g0` | No debug information
+`-g1` | Minimal debug information.
+`-g` | Default debug information.
+`-g3` | Maximal debug information.
 
+> Compiling without `-g` at all and compiling with `-g0` are equivalent.
+
+#### Syntax
+```shell
+gcc -g(level) [options] [source files] [object files] [-o output file]
+```
+#### Example
+```cpp
+// hello.cpp
+#include <iostream>
+
+auto main(void) -> int {
+    std::cout << "Hello world!\n";
+
+    return 0;
+}
+```
+
+Building and using `gdb`:
+```shell
+g++ -g hello.cpp -o hello
+gdb hello
+...
+(gdb) run
+Starting program: /home/.../hello
+Hello world!
+[Inferior 1 (process 15094) exited normally]
+(gdb) quit
+```
 
 ## Output flag: `gcc -o output file`
 Write the build output to and output file.
