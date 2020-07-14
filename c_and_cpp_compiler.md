@@ -16,7 +16,7 @@ Option | Description
 [`gcc -o output file`](#output-flag-gcc--o-output-file) | Write build output to output file.
 [`gcc -O(level)`](#set-compilers-optimization-gcc--O) | Optimize for code size and execution time.
 `gcc -w` | Disabled all warning messages.
-[`gcc -Wall`](#gcc--Wall) | Enabled all warning messages.
+[`gcc -Wall`](#enable-all-warning-compiler-messages-gcc--Wall) | Enabled all warning messages.
 `gcc -Wextra` | Enable extra warning messages.
 
 ---
@@ -159,3 +159,35 @@ Option | Optimization level | Execution time | Code size | Memory usage | Compil
 > -reduce, --reduce more, ---reduce even more
 
 Strange behavior [here](https://stackoverflow.com/questions/28875325/gcc-optimization-flag-o3-makes-code-slower-than-o2) :exclamation:.
+
+## Enable all warning compiler messages: `gcc -Wall`
+Enables all compiler's warning messages. This option should always be used, in order to generate betrter code
+#### Syntax
+```shell
+gcc -Wall [options] [source files] [object files] [-o outfile]
+```
+#### Example
+```cpp
+#include <iostream>
+
+auto main(void) -> int {
+
+    std::cout << "Hello world!\n";
+    auto i = 10;
+    
+    return 0;
+}
+```
+#### Regular build:
+```shell
+g++ example.cpp -o example
+-- No output
+```
+#### Build with `-Wall`:
+```shell
+g++ -Wall example.cpp -o example
+test.cpp: In function ‘int main()’:
+test.cpp:6:10: warning: unused variable ‘i’ [-Wunused-variable]
+    6 |     auto i = 10;
+      |        
+```
