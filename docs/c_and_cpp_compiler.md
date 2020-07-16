@@ -1,7 +1,8 @@
 # C and C++ compiler guide
 Based on [rapidtables.com](https://www.rapidtables.com/code/linux/gcc.html)
 ## GCC compiler
-GCC is a short of GNU Compiler Collection, a C compiler for Linux.
+GCC is a short of GNU Compiler Collection, a C (and C++) compiler for Linux.
+## Syntax
 ```shell
 gcc [options] [source files] [object files] [-o outfile]
 ```
